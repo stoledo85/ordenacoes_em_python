@@ -70,28 +70,28 @@ def comb_sort(lista: list[int]):
                 lista[i], lista[j] = lista[j], lista[i]
                 troca = True
     return lista
-    # def bogo_sort(lista: list[int]):
-    """O algoritmo menos eficiente de ordenação
+    # # def bogo_sort(lista: list[int]):
+    # """O algoritmo menos eficiente de ordenação
 
-    Args:
-        lista (list[int]): lista de numeros a ser ordenado
+    # Args:
+    #     lista (list[int]): lista de numeros a ser ordenado
 
-    Returns:
-        _type_: _description_
-    """
-    n = len(lista)
+    # Returns:
+    #     _type_: _description_
+    # """
+    # n = len(lista)
 
-    def isSorted(lista):
-        if n < 2:
-            return True
-        for i in range(n - 1):
-            if lista[i] > lista[i + 1]:
-                return False
-        return True
+    # def isSorted(lista):
+    #     if n < 2:
+    #         return True
+    #     for i in range(n - 1):
+    #         if lista[i] > lista[i + 1]:
+    #             return False
+    #     return True
 
-    while not isSorted(lista):
-        random.shuffle(lista)
-    return lista
+    # while not isSorted(lista):
+    #     random.shuffle(lista)
+    # return lista
 
 
 def merge_sort(lista: list[int]):
@@ -157,6 +157,14 @@ def heap_sort(lista: list[int]):
 
 
 def gnome_sort(lista: list[int]):
+    pivot = 0
+    n = len(lista)
+    while pivot < n - 1:
+        if lista[pivot] > lista[pivot + 1]:
+            lista[pivot + 1], lista[pivot] = lista[pivot], lista[pivot + 1]
+            if pivot > 0:
+                pivot -= 2
+        pivot += 1
     return lista
 
 

@@ -55,6 +55,9 @@ class ordenacaoTestCase(unittest.TestCase):
     def testando_shell(self):
         self.assertListEqual(shell_sort(self.a), self.b)
 
+    def testando_gnome(self):
+        self.assertListEqual(gnome_sort(self.a), self.b)
+
 
 if __name__ == "__main__":
     unittest.main()

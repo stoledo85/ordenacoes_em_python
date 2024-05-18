@@ -7,6 +7,7 @@ from sort import (
     merge_sort,
     selection_sort,
     heap_sort,
+    gnome_sort,
 )
 
 
@@ -69,6 +70,14 @@ def relatorio_sorts(listas_de_numeros):
     for i in range(len(listas_de_numeros)):
         start_time = time.perf_counter()
         heap_sort(sorteio_numeros(listas_de_numeros[i]))
+        end_time = time.perf_counter()
+        execution_time = end_time - start_time
+        print(f"Lista com {listas_de_numeros[i]}: {execution_time: .5f} segundos")
+
+    print(f"#" * 20, "Gnome", "#" * 20)
+    for i in range(len(listas_de_numeros)):
+        start_time = time.perf_counter()
+        gnome_sort(sorteio_numeros(listas_de_numeros[i]))
         end_time = time.perf_counter()
         execution_time = end_time - start_time
         print(f"Lista com {listas_de_numeros[i]}: {execution_time: .5f} segundos")
